@@ -410,7 +410,7 @@ INSERT INTO employees(name,age,position,hire_time) VALUES('HanMeimei', 23,'dev',
 INSERT INTO employees(name,age,position,hire_time) VALUES('Lucy',23,'dev',NOW());
 ```
 
-### 全值匹配
+### 尽量全值匹配
 
 ```sql
 EXPLAIN SELECT * FROM employees WHERE name= 'LiLei';
@@ -430,9 +430,9 @@ EXPLAIN SELECT * FROM employees WHERE  name= 'LiLei' AND  age = 22 AND position 
 
 ![image-20241107232439280](./assets/image-20241107232439280.png)
 
-**结论：**上述三种情况只有第三个是全值索引，即WHERE条件中的列恰好覆盖索引列且满足最左前缀原则，这种索引情况区分度最高，索引利用率最高，扫描的行数可能会更少，因此查询效率也会是最高。
+上述三种情况只有第三个是全值索引，即WHERE条件中的列恰好覆盖索引列且满足最左前缀原则，这种索引情况区分度最高，索引利用率最高，扫描的行数可能会更少，因此查询效率也会是最高。
 
-### 索引列上不做任何操作
+### 索引列上尽量不做任何操作
 
 这里的操作包含：计算、函数或者类型转换，因为这样会导致索引失效而转向全表扫描。
 
@@ -471,3 +471,113 @@ EXPLAIN SELECT * FROM employees WHERE hire_time >='2018-09-30 00:00:00' AND hire
 ALTER TABLE `employees` DROP INDEX `idx_hire_time`;
 ```
 
+### 索引非最右列尽量不使用范围查找
+
+```sql
+EXPLAIN SELECT * FROM employees WHERE name= 'LiLei' AND age = 22 AND position ='manager';
+```
+
+![image-20241107234515289](./assets/image-20241107234515289.png)
+
+```sql
+EXPLAIN SELECT * FROM employees WHERE name= 'LiLei' AND age > 22 AND position ='manager';
+```
+
+![image-20241107234544861](./assets/image-20241107234544861.png)
+
+从上面的例子来看，满足最左前缀原则的情况下，如果在索引非最右列使用了范围查找，索引利用率会下降。联合索引树的特点就是在某索引列左侧列相等的情况下，该索引列才有序且其右侧列可能无序。上面例子中第二列是一个范围查询，查询结果之间无法确定是否相等，就导致遍历到第三列无法确定是否有序，所以索引失效。
+
+### 尽量使用覆盖索引而不是SELECT *
+
+```sql
+EXPLAIN SELECT name,age FROM employees WHERE name= 'LiLei' AND age = 23 AND position ='manager';
+```
+
+![image-20241107235217640](./assets/image-20241107235217640.png)
+
+```sql
+EXPLAIN SELECT * FROM employees WHERE name= 'LiLei' AND age = 23 AND position ='manager';
+```
+
+![image-20241107235240769](./assets/image-20241107235240769.png)
+
+### 尽量不使用否定关键字和NULL
+
+这种情况包括：!=或<>、NOT IN、NOT EXISTS、IS NULL、IS NOT NULL，这些情况很可能会导致全表扫描。
+
+```sql
+EXPLAIN SELECT * FROM employees WHERE name NOT IN (SELECT 'LiLei');
+```
+
+![image-20241107235946727](./assets/image-20241107235946727.png)
+
+### LIKE关键字尽量不以%开头
+
+观察下面两个示例：
+
+```sql
+EXPLAIN SELECT * FROM employees WHERE name LIKE '%Lei'
+```
+
+![image-20241108000415448](./assets/image-20241108000415448.png)
+
+```sql
+EXPLAIN SELECT * FROM employees WHERE name LIKE 'Lei%'
+```
+
+![image-20241108000429767](./assets/image-20241108000429767.png)
+
+出现上述情况的原因其实也是因为最左前缀原则，即匹配字符串时从头开始扫描和比较。
+
+如果硬要以%开头进行模糊查询，可以选择使用覆盖索引去避免全表扫描，提升效率：
+
+```sql
+EXPLAIN SELECT name,age,position FROM employees WHERE name LIKE '%Lei';
+```
+
+![image-20241108000731545](./assets/image-20241108000731545.png)
+
+### 查询条件尽量保持数据类型相同
+
+即数据库中要求字符串，就不要传参为数字。
+
+```sql
+EXPLAIN SELECT * FROM employees WHERE name = '1000';
+```
+
+![image-20241108001011622](./assets/image-20241108001011622.png)
+
+```sql
+EXPLAIN SELECT * FROM employees WHERE name = 1000;
+```
+
+![image-20241108001025640](./assets/image-20241108001025640.png)
+
+### 尽量少用OR或者IN
+
+当使用OR或者IN时，MySQL不一定会使用索引，因为MySQL内部优化器会根据检索的比例、表达小等多个因素进行整体评估是否使用索引。
+
+### 尽量拆分大数据量查询
+
+平时工作中，有一个业务设计无形中会遵守这个原则，那就是分页查询，请看下面这个例子：
+
+```sql
+# 首先添加一个索引
+ALTER TABLE `employees` ADD INDEX `idx_age` (`age`) USING BTREE ;
+
+# 然后进行大数据量查询，发现type列值可能为ALL
+EXPLAIN SELECT * FROM employees WHERE age >=1 AND age <=2000;
+
+# 拆分查询之后，发现type列值为range
+EXPLAIN SELECT * FROM employees WHERE age >=1 AND age <=1000;
+EXPLAIN SELECT * FROM employees WHERE age >=1001 AND age <=2000;
+
+# 最后还原索引
+ALTER TABLE `employees` DROP INDEX `idx_age`;
+```
+
+## 索引常用方法
+
+![image-20241108001902013](./assets/image-20241108001902013.png)
+
+注意：like KK%相当于=常量，%KK和%KK% 相当于范围
