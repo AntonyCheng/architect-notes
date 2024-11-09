@@ -580,4 +580,5 @@ ALTER TABLE `employees` DROP INDEX `idx_age`;
 
 ![image-20241108001902013](./assets/image-20241108001902013.png)
 
-注意：like KK%相当于=常量，%KK和%KK% 相当于范围
+有一个注意点，现在暂时这么理解：`LIKE KK%`相当于常量，`LIKE %KK`和`LIKE %KK%`相当于范围。
+
