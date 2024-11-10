@@ -1,4 +1,4 @@
-# Explain详解
+# Explain详解与索引最佳实践
 
 深入理解了索引的理论后，接下来就进入第一个偏实践的环节，就是耳熟不（bushi）详的 **`Explain`** 工具的使用详解。
 
@@ -360,7 +360,7 @@ EXPLAIN SELECT DISTINCT name FROM film;
 
 从上面两种情况可以看出，如果遇到去重这样的情况，可以给去重列加上索引提高效率。
 
-**5、Using filesort：文件排序将使用外部排序而不是索引排序，这种情况当数量小时还能从内存进行排序，否则就需要借助磁盘I/O完成排序，这种情况也是需要用索引来优化的。**
+**5、Using filesort：文件排序将使用外部排序而不是索引排序，这种情况当数量小时还能从内存进行排序，否则就需要借助磁盘I/O完成排序，这种情况常见于ORDER BY和GROUP BY两个关键字，这种情况也是需要用索引来优化的。**
 
 还是两个相似于Using temporary的例子，第一个是：
 
@@ -379,6 +379,8 @@ EXPLAIN SELECT * FROM film ORDER BY name;
 ![image-20241107231502312](./assets/image-20241107231502312.png)
 
 可以看出优化思路是一样的，即给排序列加上索引提高效率。
+
+这里也可以做出一个对于ORDER BY和GROUP BY两个关键字的一个**普适性结论：如果出现`Using filesoft`值，就表示关键字之后的部分没有使用索引扫描。**
 
 **6、Select tables optimized away：使用某些聚合函数（比如 max、min）来访问存在索引的某个字段。**
 
