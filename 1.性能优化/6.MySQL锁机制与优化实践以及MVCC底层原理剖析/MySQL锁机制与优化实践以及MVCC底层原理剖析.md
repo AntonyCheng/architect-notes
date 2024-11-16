@@ -16,6 +16,18 @@
 
 ### 表锁、行锁和页锁
 
+#### 前置数据准备
+
+```sql
+# 建表SQL
+CREATE TABLE `mylock` ( 
+	`id` INT NOT NULL AUTO_INCREMENT, 
+	`name` VARCHAR(20) DEFAULT NULL, 
+    PRIMARY KEY (`id`)
+) 
+ENGINE = InnoDB DEFAULT CHARSET = utf8;
+```
+
 #### 表锁
 
 每次操作会锁住整张表，其他对于该表的操作都会被阻塞。表锁相对来说开销小，加锁快（相对行锁，不用去扫描确定具体行位置），不会出现死锁现象。但是由于上锁粒度大，发生锁冲突的概率是最高的，并发度也是最低的，在整张表数据迁移的场景下会主动使用表锁。表锁的操作SQL如下：
@@ -34,14 +46,6 @@ UNLOCK TABLES;
 示例如下：
 
 ```sql
-# 建表SQL
-CREATE TABLE `mylock` ( 
-	`id` INT NOT NULL AUTO_INCREMENT, 
-	`NAME` VARCHAR(20) DEFAULT NULL, 
-    PRIMARY KEY (`id`)
-) 
-ENGINE = MyISAM DEFAULT CHARSET = utf8;
-
 # 在当前会话中写锁
 LOCK TABLE `mylock` WRITE;
 
@@ -72,7 +76,68 @@ SHOW OPEN TABLES;
 
 行锁在实际业务开发过程中最常见的，它相对表锁来说开销大，加锁慢，同时会出现死锁现象。因为锁定粒度最小，所以发生所冲突的概率最低，并发度也是最高的。
 
-InnoDB引擎对比Myisam引擎两大不同点就是：InnoDB支持事务以及InnoDB支持行锁，但是一定要注意InnoDB引擎中的行锁实际上是针对索引树加的锁，即在索引对应的索引项上做标识，并不是对表整行记录加锁。
+InnoDB引擎对比MyISAM引擎两大不同点就是：InnoDB支持事务以及InnoDB支持行锁，但是一定要注意InnoDB引擎中的行锁实际上是根据条件针对索引树加的锁，即在索引对应的索引项上做标识，并不是对表整行记录加锁。下面这个是**针对Repeatable Read（可重复读）隔离级别提出的一种特殊情况：如果条件无法走索引，那么会从加行锁升级为加表锁**，怎么理解呢？请看下面这个示例：
+
+```sql
+BEGIN;
+# FOR UPDATE会强制给查询操作上一把读锁
+SELECT * FROM mylock WHERE `id` = 1 FOR UPDATE;
+COMMIT;
+```
+
+这个SQL语句由于走了索引（主键索引），无论MySQL版本如何，都会上行锁，在事务提交之前其他事务对该条记录无法进行任何操作，但是可以对表中其他记录进行操作，再对比下面这个示例：
+
+```sql
+BEGIN;
+# FOR UPDATE会强制给查询上一把读锁
+SELECT * FROM mylock WHERE `name` = 'antony' FOR UPDATE;
+COMMIT;
+```
+
+由于这条SQL语句进行全表扫描，没有走索引，那么在Repeatable Read（可重复读）隔离级别中，它就会把行锁升级为表锁，即在事务提交之前其他事务对表中所有记录都无法进行操作。
+
+**为什么Repeatable Read（可重复读）隔离级别行锁会被升级为表锁呢？**
+
+因为在Repeatable Read（可重复读）隔离级别下，需要解决不可重复读和幻读问题，所以在遍历扫描聚集索引记录时，为了防止扫描过的索引被其它事务修改（不可重复读问题）或间隙被其它事务插入记录（幻读问题），从而导致数据不一致，所以MySQL的解决方案就是把所有扫描过的索引记录和间隙都锁上（这里说的是间隙锁，还有一个临键锁，这两种锁下面会讨论到），这里要注意，并不是直接将整张表加表锁，因为不一定能加上表锁，可能会有其它事务锁住了表里的其它行记录。
+
+**什么是间隙锁？什么是临键锁？**
+
+由于MySQL 8对于间隙锁进行了优化，下面先以MySQL 5.7版本为例对两种锁进行解释，然后再针对MySQL 8优化点进行说明。
+
+间隙锁，顾名思义就是对两个值之间的间隙上锁，要注意间隙锁只会在Repeatable Read（可重复读）隔离级别中走索引的情况下生效。主要是为了尽可能解决幻读问题，假设表中数据如下：
+
+![image-20241117011251957](./assets/image-20241117011251957.png)
+
+id列是主键索引，所以明显所谓的间隙就是id值为（3,10），（10,25），（25，无穷大）这三个**开区间**，即如果在A会话中执行以下SQL语句：
+
+```sql
+SELECT * FROM `mylock` WHERE id = 20 FOR UPDATE;
+```
+
+那么MySQL会在（10，25）这个数据范围进行加锁，其他会话操作在有锁情况下被阻塞。
+
+临键锁是行锁和间隙锁的一种组合，也只会在Repeatable Read（可重复读）隔离级别中走索引的情况下生效，一般出现在范围查询中，即如果A会话中执行以下SQL语句：
+
+```sql
+SELECT * FROM `mylock` WHERE id >= 3 AND id <= 25 FOR UPDATE;
+```
+
+此时被锁住的范围是 [3，10]，（10，25] 这样的**半开半闭或者半闭区间**，这种锁就叫临键锁。
+
+以上都是MySQL 5.7版本中会出现的情况，但是在MySQL 8版本中对其进行了优化：
+
+- 在MySQL 8默认的事务隔离级别 **可重复读（REPEATABLE READ）**中：
+  - **间隙锁的使用场景减少**：在 `SELECT ... FOR UPDATE`、`DELETE`、`INSERT` 或 `UPDATE` 的操作中，InnoDB 会尽量只加行锁，而不是加间隙锁，**除非明确有必要防止幻读**。
+  - **自动间隙锁减少**：在范围查询的情况下，如果 InnoDB 可以明确确定查询结果不涉及幻读，则不会加间隙锁。例如，对一个唯一索引的等值查询（即使是范围查询）不会再加间隙锁。
+- MySQL 8中引入了 **隐式锁** 和 **临时锁优化**，进一步减少不必要的间隙锁，提升并发性能。
+
+一定要注意，MySQL 8并不是不使用间隙锁或者临键锁，而是先会对查询情况进行优化，迫不得已的情况下才使用间隙锁或者临键锁。
+
+#### 总结
+
+InnoDB存储引擎由于实现了行级锁定，虽然在锁定机制的实现方面所带来的性能损耗可能比表级锁定会要更高一下，但是在整体并发处理能力方面要远远优于MYISAM的表级锁定的。当系统并发量高的时候，InnoDB的整体性能和MYISAM相比就会有比较明显的优势了。
+
+但是，InnoDB的行级锁定同样也有其脆弱的一面，当我们使用不当的时候，可能会让InnoDB的整体性能表现不仅不能比MYISAM高，甚至可能会更差。
 
 ### 读锁、写锁和意向锁
 
@@ -97,3 +162,69 @@ SELECT * FROM T WHERE id=1 FOR UPDATE;
 #### 意向锁
 
 意向锁（Intention Lock）主要针对表锁，由于表锁在实际业务使用较少，所以这个可以当作一个概念进行了解，意向锁主要为了提高加表锁的效率，是MySQL数据库自有的特性。当有事务给表中的数据加了写锁或者读锁时，同时会给表设置一个意向标识，表示该表已经有了行锁，其他事务想要对表加表锁时就不用逐行扫描是否存在行锁与表锁冲突，而是直接读取这个标识就可以确定自己是否加表锁。特别是表中记录特别多的时候，逐行判断加表锁的方式效率会很低，这个意向标识就是意向锁。意向锁也被分为意向共享锁和意向排它锁，分别针对对整个表加共享锁或排它锁前的锁冲突判断。
+
+#### 总结
+
+MyISAM在执行查询语句SELECT前，会自动给涉及的所有表加读锁，在执行update、insert、delete操作会自动给涉及的表加写锁。
+
+InnoDB在执行查询语句SELECT时（非串行隔离级别），默认不会加锁（也可以手动加）。但是update、insert、delete操作会加行锁。
+
+另外，读锁会阻塞写，但是不会阻塞读。而写锁则会把读和写都阻塞。
+
+### 锁等待分析
+
+1、通过检查InnoDB_row_lock状态变量来分析系统上的行锁的争夺情况：
+
+```sql
+SHOW STATUS LIKE 'innodb_row_lock%';
+
+# 对各个状态量的说明如下：
+# Innodb_row_lock_current_waits: 当前正在等待锁定的数量
+# Innodb_row_lock_time: 从系统启动到现在锁定总时间长度（重要）
+# Innodb_row_lock_time_avg: 每次等待所花平均时间（重要）
+# Innodb_row_lock_time_max：从系统启动到现在等待最长的一次所花时间
+# Innodb_row_lock_waits: 系统启动后到现在总共等待的次数（重要）
+```
+
+尤其是当等待次数很高，而且每次等待时长也不小的时候，我们就需要分析系统中为什么会有如此多的等待，然后根据分析结果着手制定优化计划。
+
+2、查看INFORMATION_SCHEMA系统库锁相关数据表：
+
+```sql
+# 查看事务
+SELECT * FROM INFORMATION_SCHEMA.INNODB_TRX;
+# 查看锁，MySQL 5.7需要换成这张表INFORMATION_SCHEMA.INNODB_LOCKS
+SELECT * FROM PERFORMANCE_SCHEMA.DATA_LOCKS;
+# 查看锁等待，MySQL 5.7需要换成这张表INFORMATION_SCHEMA.INNODB_LOCK_WAITS
+SELECT * FROM PERFORMANCE_SCHEMA.DATA_LOCK_WAITS;
+# 释放锁，trx_mysql_thread_id可以从INNODB_TRX表里查看到
+KILL trx_mysql_thread_id
+```
+
+### 死锁问题分析
+
+死锁现象复现：
+
+```sql
+SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+# Session_1执行：
+SELECT * FROM `mylock` WHERE id=1 FOR UPDATE;
+# Session_2执行：
+SELECT * FROM `mylock` WHERE id=2 FOR UPDATE;
+# Session_1执行：
+SELECT * FROM `mylock` WHERE id=2 FOR UPDATE;
+# Session_2执行：
+SELECT * FROM `mylock` WHERE id=1 FOR UPDATE;
+# 查看近期死锁日志信息：
+SHOW ENGINE INNODB STATUS;
+```
+
+大多数情况MySQL可以自动检测死锁并回滚产生死锁的那个事务，但是有些情况MySQL没法自动检测死锁，这种情况我们可以通过日志分析找到对应事务线程id，可以通过KILL杀掉。
+
+**锁优化实践：**
+
+- 尽可能让所有数据检索都通过索引来完成，避免无索引行锁升级为表锁；
+- 合理设计索引，尽量缩小锁的范围；
+- 尽可能减少检索条件范围，避免间隙锁；
+- 尽量控制事务大小，减少锁定资源量和时间长度，涉及事务加锁的SQL尽量放在事务最后执行；
+- 尽可能用低的事务隔离级别。
