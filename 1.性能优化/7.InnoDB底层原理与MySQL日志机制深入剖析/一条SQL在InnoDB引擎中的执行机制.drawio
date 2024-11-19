@@ -1,0 +1,318 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="第 1 页" id="DoHCNfBCIY52U8KcvZiw">
+    <mxGraphModel dx="2133" dy="1313" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-48" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;.ibd磁盘文件&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot; style=&quot;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot; style=&quot;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot; style=&quot;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot; style=&quot;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot; style=&quot;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="694" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-27" target="OGXcIyp3VzhDhU8xYQvN-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-45" value="&lt;b&gt;2、写入更新数据的反SQL&lt;/b&gt;&lt;div&gt;&lt;b&gt;便于回滚操作&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-44">
+          <mxGeometry x="0.2839" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-27" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="424" width="520" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="124" width="360" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-2" target="OGXcIyp3VzhDhU8xYQvN-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-2" value="Client客户端执行SQL语句：&lt;div&gt;UPDATE t SET name=&#39;antony&#39; WHERE id=1;&lt;/div&gt;&lt;div&gt;注意：id为1的数据name原值为&#39;cheng&#39;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="44" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-4" target="OGXcIyp3VzhDhU8xYQvN-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-4" value="连接器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="144" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-6" value="查询缓存" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="184" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-8" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-6" target="OGXcIyp3VzhDhU8xYQvN-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="314" as="sourcePoint" />
+            <mxPoint x="600" y="264" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-9" target="OGXcIyp3VzhDhU8xYQvN-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-9" value="分析器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="204" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-10" target="OGXcIyp3VzhDhU8xYQvN-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-10" value="优化器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="264" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-12" target="OGXcIyp3VzhDhU8xYQvN-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-32" value="&lt;b&gt;3、更新内存数据&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-31">
+          <mxGeometry x="0.3883" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-12" target="OGXcIyp3VzhDhU8xYQvN-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-38" value="&lt;b&gt;4、写redo log日志&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-37">
+          <mxGeometry x="0.3879" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-12" value="&lt;b&gt;执行器&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="324" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-14" value="管理连接&lt;div&gt;权限校验&lt;/div&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="139" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-17" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-4" target="OGXcIyp3VzhDhU8xYQvN-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="294" as="sourcePoint" />
+            <mxPoint x="730" y="244" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-19" value="词法分析&lt;div&gt;语法分析&lt;/div&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="199" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-21" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-9" target="OGXcIyp3VzhDhU8xYQvN-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="294" as="sourcePoint" />
+            <mxPoint x="730" y="244" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-23" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-10" target="OGXcIyp3VzhDhU8xYQvN-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="229" as="sourcePoint" />
+            <mxPoint x="760" y="229" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-24" value="生成执行计划&lt;div&gt;索引选择等&lt;/div&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="259" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-26" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Server层&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="239" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shape=flexArrow;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-12" target="OGXcIyp3VzhDhU8xYQvN-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-29" value="&lt;b&gt;调用引擎接口&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-28">
+          <mxGeometry x="0.3143" y="2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-30" target="OGXcIyp3VzhDhU8xYQvN-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-35" value="修改后的数据" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-34">
+          <mxGeometry x="0.2127" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-30" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Buffer Pool&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;缓存池&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="464" width="170" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-33" target="OGXcIyp3VzhDhU8xYQvN-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-70" value="&lt;b&gt;8、在系统空闲时将缓存中的&lt;/b&gt;&lt;div&gt;&lt;b&gt;数据&lt;/b&gt;&lt;b&gt;以页为单位随机写入磁盘&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-66">
+          <mxGeometry x="0.0359" relative="1" as="geometry">
+            <mxPoint x="-30" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-33" value="IO线程" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="505" y="594" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-36" value="&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Redo Log Buffer&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font size=&quot;3&quot;&gt;缓存池&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="464" width="170" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-39" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;InnoDB存储引擎&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="424" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-40" value="数据库的增删查改都是直接操作Buffer Pool，一般设置为机器内存的60%-70%左右" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="314" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-42" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1.002;entryY=0.509;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-30" target="OGXcIyp3VzhDhU8xYQvN-40">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="504" as="sourcePoint" />
+            <mxPoint x="600" y="454" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-43" value="&lt;div&gt;undo log回滚日志文件&lt;/div&gt;&lt;div&gt;存放反SQL语句：&lt;/div&gt;&lt;div&gt;UPDATE t SET name=&#39;cheng&#39; WHERE id=1;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="724" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-46" value="如果事务提交失败，就会回滚数据，届时直接执行undo日志中的反SQL以恢复Buffer Pool数据" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="874" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-47" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-46" target="OGXcIyp3VzhDhU8xYQvN-43">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="10" y="884" as="sourcePoint" />
+            <mxPoint x="60" y="834" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-53" target="OGXcIyp3VzhDhU8xYQvN-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-61" value="&lt;b&gt;1、加载缓存数据&lt;/b&gt;&lt;div&gt;&lt;b&gt;将id为1的记录所在页&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;中所有数据加载入缓存&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-60">
+          <mxGeometry x="-0.097" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-53" value="修改前Page0" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;shadow=0;strokeColor=#000000;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="310" y="724" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-54" value="name=‘cheng’" style="text;strokeColor=#000000;fillColor=#CCFFCC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="OGXcIyp3VzhDhU8xYQvN-53">
+          <mxGeometry y="30" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-55" value="&lt;b&gt;......&lt;/b&gt;" style="text;strokeColor=#000000;fillColor=#CCFFCC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="OGXcIyp3VzhDhU8xYQvN-53">
+          <mxGeometry y="60" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-57" value="修改后Page0" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="410" y="724" width="90" height="90" as="geometry">
+            <mxRectangle x="250" y="740" width="110" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-58" value="name=&#39;antony&#39;" style="text;strokeColor=#000000;fillColor=#CCFFCC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="OGXcIyp3VzhDhU8xYQvN-57">
+          <mxGeometry y="30" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-59" value="&lt;b&gt;......&lt;/b&gt;" style="text;strokeColor=#000000;fillColor=#CCFFCC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="OGXcIyp3VzhDhU8xYQvN-57">
+          <mxGeometry y="60" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-62" value="缓存中Page0" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;shadow=0;strokeColor=#000000;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="360" y="504" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-63" value="name=‘antony’" style="text;strokeColor=#000000;fillColor=#FFCCCC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="OGXcIyp3VzhDhU8xYQvN-62">
+          <mxGeometry y="30" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-64" value="&lt;b&gt;......&lt;/b&gt;" style="text;strokeColor=#000000;fillColor=#CCFFCC;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="OGXcIyp3VzhDhU8xYQvN-62">
+          <mxGeometry y="60" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-65" target="OGXcIyp3VzhDhU8xYQvN-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-65" value="Page Cache" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="512" y="694" width="56" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-72" value="Page Cache可以类比内存和CPU之间的Cache高速缓存，它存在于内存和磁盘之间，解决内存和磁盘速度差异过大而导致的性能问题。&lt;div&gt;速度上&lt;span style=&quot;background-color: initial;&quot;&gt;CPU &amp;gt; Cache &amp;gt; 内存 &amp;gt; Page Cache &amp;gt; 磁盘。&lt;/span&gt;&lt;div&gt;站在MySQL的视角，写入Page Cache就等于写入磁盘&lt;/div&gt;&lt;/div&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="869" width="298" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-73" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-72" target="OGXcIyp3VzhDhU8xYQvN-65">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="834" as="sourcePoint" />
+            <mxPoint x="670" y="784" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="419" y="854" />
+              <mxPoint x="550" y="854" />
+              <mxPoint x="550" y="734" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-74" value="redo log重做日志文件&lt;div&gt;存放物理修改数据，&lt;/div&gt;&lt;div&gt;即在哪一页做了什么修改&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="764" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-36" target="OGXcIyp3VzhDhU8xYQvN-78">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="675" y="594" as="sourcePoint" />
+            <mxPoint x="675" y="764" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-82" value="&lt;b&gt;5、时时刻刻将缓存中的日志&lt;/b&gt;&lt;div&gt;&lt;b&gt;按照顺序追加写入磁盘&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;准备提交事务&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-79">
+          <mxGeometry x="0.34" y="-3" relative="1" as="geometry">
+            <mxPoint x="3" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-78" target="OGXcIyp3VzhDhU8xYQvN-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-78" value="Page Cache" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="647" y="704" width="56" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-83" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-72" target="OGXcIyp3VzhDhU8xYQvN-78">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="924" as="sourcePoint" />
+            <mxPoint x="680" y="874" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="419" y="854" />
+              <mxPoint x="560" y="854" />
+              <mxPoint x="560" y="724" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-86" value="如果事务提交成功，Buffer Pool里的数据还没有来得及写入磁盘，此时系统或者MySQL突然宕机了，MySQL会使用redo log日志中的数据恢复.ibd磁盘文件" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="1004" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-87" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-86" target="OGXcIyp3VzhDhU8xYQvN-74">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="974" as="sourcePoint" />
+            <mxPoint x="680" y="924" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-89" value="redo log日志文件是一个或者几个预先分配好磁盘空间的文件，写入方式永远都是在文件末尾追加；而.ibd磁盘文件时随机读写，不同的数据表都有不同的.ibd磁盘文件，不能实现顺序写文件的效果。先写redo log日志，再刷新.ibd磁盘文件的机制叫做WAL（Write-Ahead Logging）机制，效率更高。" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="1014" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-90" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-89" target="OGXcIyp3VzhDhU8xYQvN-74">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="685" y="1024" as="sourcePoint" />
+            <mxPoint x="685" y="874" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="395" y="994" />
+              <mxPoint x="675" y="994" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-91" target="OGXcIyp3VzhDhU8xYQvN-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-94" value="&lt;b&gt;7、写入Commit标记到redo log&lt;/b&gt;&lt;div&gt;&lt;b&gt;日志文件里，提交事务完成，&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;该标记为了保证事务提交后&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;redo log和bin log数据保持一致。&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-93">
+          <mxGeometry x="0.1753" y="-6" relative="1" as="geometry">
+            <mxPoint x="21" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-91" value="bin log归档日志文件&lt;div&gt;存放逻辑修改数据，&lt;/div&gt;&lt;div&gt;即直接的修改内容&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="654" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-97" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-12" target="OGXcIyp3VzhDhU8xYQvN-96">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="339" as="sourcePoint" />
+            <mxPoint x="915" y="654" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-100" value="&lt;b&gt;6、准备提交事务&lt;/b&gt;&lt;div&gt;&lt;b&gt;bin log文件写入磁盘&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OGXcIyp3VzhDhU8xYQvN-97">
+          <mxGeometry x="0.463" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-96" target="OGXcIyp3VzhDhU8xYQvN-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-96" value="Page Cache" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="887" y="554" width="56" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-101" value="binlog主要用来手动恢复数据库磁盘中的数据" style="shape=note;size=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="904" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="OGXcIyp3VzhDhU8xYQvN-103" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="OGXcIyp3VzhDhU8xYQvN-101" target="OGXcIyp3VzhDhU8xYQvN-91">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1070" y="924" as="sourcePoint" />
+            <mxPoint x="1070" y="784" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="915" y="844" />
+              <mxPoint x="1010" y="844" />
+              <mxPoint x="1010" y="704" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
