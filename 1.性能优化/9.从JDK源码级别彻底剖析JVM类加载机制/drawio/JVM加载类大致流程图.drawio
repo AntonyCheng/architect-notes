@@ -1,0 +1,78 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="第 1 页" id="UHCnq_7GRObp0IjijOOB">
+    <mxGraphModel dx="839" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oChIofPVtaxKE6G84Ddx-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="oChIofPVtaxKE6G84Ddx-12" target="oChIofPVtaxKE6G84Ddx-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="oChIofPVtaxKE6G84Ddx-1" target="oChIofPVtaxKE6G84Ddx-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-1" value="java top.sharehome.jvmloader.Math" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="60" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="oChIofPVtaxKE6G84Ddx-2" target="oChIofPVtaxKE6G84Ddx-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-2" value="Windows系统由java.exe调用底层的jvm.dll文件创建Java虚拟机&lt;div&gt;（由C++实现）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="130" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="oChIofPVtaxKE6G84Ddx-4" target="oChIofPVtaxKE6G84Ddx-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-8" value="1、C++调用Java代码&lt;div&gt;创建JVM启动器实例&lt;/div&gt;&lt;div&gt;sun.misc.Launcher&lt;/div&gt;&lt;div&gt;该类由引导类加载器&lt;/div&gt;&lt;div&gt;负责加载创建其他类型&lt;/div&gt;&lt;div&gt;的加载器&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="oChIofPVtaxKE6G84Ddx-7" vertex="1" connectable="0">
+          <mxGeometry x="0.0428" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="oChIofPVtaxKE6G84Ddx-4" target="oChIofPVtaxKE6G84Ddx-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-19" value="2、完成加载之后，JVM会执行Math类的Main()主函数，这个是C++发起调用的" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="oChIofPVtaxKE6G84Ddx-18" vertex="1" connectable="0">
+          <mxGeometry x="0.0423" y="-1" relative="1" as="geometry">
+            <mxPoint x="86" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-4" value="创建一个&lt;b&gt;引导类加载器&lt;/b&gt;实例&lt;div&gt;（C++实现）&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="220" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="oChIofPVtaxKE6G84Ddx-6" target="oChIofPVtaxKE6G84Ddx-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-11" value="获取运行类自己的加载器&lt;div&gt;AppClassLoader的实例&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="oChIofPVtaxKE6G84Ddx-10" vertex="1" connectable="0">
+          <mxGeometry x="-0.6138" relative="1" as="geometry">
+            <mxPoint y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-6" value="&lt;span style=&quot;font-size: 11px; text-wrap: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;launcher=&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 11px; text-wrap: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;sun.misc.Launcher.getLauncher()&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="60" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="oChIofPVtaxKE6G84Ddx-9" target="oChIofPVtaxKE6G84Ddx-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-14" value="调用loadClass()加载要运行的Math类" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="oChIofPVtaxKE6G84Ddx-13" vertex="1" connectable="0">
+          <mxGeometry x="0.2276" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-9" value="classLoader=&lt;div&gt;launcher.getClassLoader()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="150" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-12" value="classLoader.loadClass(&#39;java top.sharehome.jvmloader.Math&#39;)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="230" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3HFc0OQXitYAlHHOH8qH-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="oChIofPVtaxKE6G84Ddx-15" target="3HFc0OQXitYAlHHOH8qH-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oChIofPVtaxKE6G84Ddx-15" value="Math.main()" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="310" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3HFc0OQXitYAlHHOH8qH-1" value="JVM销毁" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="437.5" y="380" width="75" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
