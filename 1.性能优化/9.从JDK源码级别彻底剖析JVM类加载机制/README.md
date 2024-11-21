@@ -134,3 +134,72 @@ loadClass()方法具体运行流程图如下：
 
 **注意**：主类在运行过程中如果使用到其它类，会逐步加载这些类。类似的JAR包或WAR包里的类不是一次性全部加载的，是使用到时才加载。具体看看以下示例代码：
 
+```java
+package top.sharehome.jvmloader;
+
+/**
+ * 动态加载类
+ *
+ * @author AntonyCheng
+ */
+public class DynamicLoad {
+    static {
+        System.out.println("静态代码块");
+    }
+
+    public static void main(String[] args) {
+        A a = new A();
+        System.out.println("主类方法");
+        B b = null;
+    }
+}
+
+class A {
+    static {
+        System.out.println("A类的静态代码块");
+    }
+
+    public A() {
+        System.out.println("初始化A类");
+    }
+}
+
+class B {
+    static {
+        System.out.println("B类的静态代码块");
+    }
+
+    public B() {
+        System.out.println("初始化B类");
+    }
+}
+```
+
+运行结果如下：
+
+```shell
+静态代码块
+A类的静态代码块
+初始化A类
+主类方法
+```
+
+从运行结果上看确实是用到哪个类才会加载并初始化哪个类。
+
+## 类加载器和双亲委派机制
+
+上面描述的类加载过程主要是通过类加载器来实现的，Java中一般有4种类型的类加载器：
+
+1、引导类加载器：负责加载支撑JVM基本运行的，位于JRE的lib目录下的核心类库，比如rt.jar、charsets.jar等。
+
+![image-20241121202328825](./assets/image-20241121202328825.png)
+
+2、扩展类加载器：负责加载支撑JVM基本运行的，位于JRE的lib目录下的ext扩展目录中的库库。
+
+![image-20241121202150393](./assets/image-20241121202150393.png)
+
+3、应用程序类加载器：负责加载ClassPath路径下的库类，简而言之就是开发人员自己编写的那些类。
+
+![image-20241121202425229](./assets/image-20241121202425229.png)
+
+4、自定义加载器：负责加载用户指定路径下的类包，在下面会以打破“双亲委派机制”为例来讨论自定义加载器。
