@@ -11,6 +11,10 @@ public class Math {
 
     public static User user = new User();
 
+    static {
+        System.out.println("abcdefghij");
+    }
+
     /**
      * 加法方法
      */
