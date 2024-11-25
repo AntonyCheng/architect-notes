@@ -424,7 +424,7 @@ protected Class<?> loadClass(String name, boolean resolve)
 
 2、避免类的重复加载：当父加载器已经加载了该类时，就没有必要子加载器再加载一次，保证被加载类的唯一性。
 
-接下来写一个`java.lang.String`看看运行结果是什么：
+接下来写一个`java.lang.String`（该项目代码示例中已经改成了myjava.lang.String，以免后续编码出现错误，如需测试改回java.lang.String即可）看看运行结果是什么：
 
 ```java
 package java.lang;

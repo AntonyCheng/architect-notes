@@ -1,4 +1,4 @@
-package java.lang;
+package myjava.lang;
 
 /**
  * 字符串类
