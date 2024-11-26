@@ -114,14 +114,60 @@ public class top.sharehome.jvmmemorymodel.Math {
 
 4、蓝色部分，即线程栈、本地方法栈以及程序计数器可以看作是一个整体，只要开启一个线程，每个线程就会有独立且隔离的线程栈、本地方法栈以及程序计数器。
 
-5、橙色部分，即堆和方法区（元空间）是可被共享的。
+5、橙色部分，即堆和方法区（元空间）是可被线程共享的。
 
 接下来根据上面的特点以线程为单位进行更细节的描述：
 
 ![JVM线程模型结构](./assets/JVM线程模型结构.jpg)
 
-由上图可以看出局部变量是存放在线程栈栈帧的局部变量表中，多个线程就会有多个程序计数器、线程栈以及本地方法栈，并且将对象引用实际地址以及数组地址存放在堆中。接下来以堆的角度来看看JVM中垃圾回收的情况。
+由上图可以看出局部变量是存放在线程栈栈帧的局部变量表中，多个线程就会有多个程序计数器、线程栈以及本地方法栈，并且**将对象引用实际地址以及数组地址存放在堆**中。接下来以堆的角度来看看JVM中垃圾回收的情况：
 
+![堆内存模型以及GC](./assets/堆内存模型以及GC.jpg)
 
+对上图也需要一些说明：
 
-[Java Visual VM官网地址](https://visualvm.github.io/index.html)
+1、对于进入堆中的对象/数组都会被打上一个标记，初始值是0，优先被分配到Eden区。每当Eden区空间不足时都会触发一次Minor GC，它不仅会清理整个年轻代中待回收的对象/数组，还会把存活的对象/数组转移至S0区，同时将对象/数组标记自增为1。之后的每次Minor GC，只要Survivor区中每次存活的对象/数组都会在S0区和S1区中来回转移，直到对象/数组标记自增到14，下一次Minor GC就会把对象/数组标记为14的转移到老年代，同时将标记自增为15。当老年代空间不足时就会触发Full GC，循环往复，一直到抛出OOM（内存溢出）异常就表示已经没有多余的可用内存空间。如果想要可视化整个过程，可以前往[Java Visual VM官网地址](https://visualvm.github.io/index.html)下载JVM工具进行测试，注意下载完成之后需要前往`Tools ==> Plugins ==> Available Plugins`安装Visual GC插件，具体测试代码如下：
+
+```java
+package top.sharehome.jvmmemorymodel;
+
+import java.util.ArrayList;
+
+/**
+ * 测试堆内存模型和GC过程
+ * 需要搭配Java Visual VM工具
+ *
+ * @author AntonyCheng
+ */
+public class TestHeapGc {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        ArrayList<User> list = new ArrayList<>();
+
+        while (true) {
+            for (int i = 0; i < 100000; i++) {
+                list.add(new User());
+            }
+            Thread.sleep(100);
+        }
+    }
+
+}
+
+```
+
+测试内容如下：
+
+![image-20241126094815157](./assets/image-20241126094815157.png)
+
+当老年代(Old Gen)所有空间被占满且无法再进行Full GC时，系统会抛出OOM异常并且结束程序，同时释放所有占用空间（这个什么时候抛出OOM异常会因JVM参数和机器配置的不同而不同）。
+
+2、通常来说Minor GC都会比Full GC效率高，耗时低，从上图也能看出，有一个GC Times，它所表示的就是垃圾回收的时间，耗时长的通常正在发生Full GC。所以避免频繁的Full GC就成了JVM内存调优的一个核心思想。
+
+**结合上面所有的内容，将整个JVM内存模型归纳到一个图中，具体如下：**
+
+![JVM内存模型整体构成](./assets/JVM内存模型整体构成.jpg)
+
+## JVM内存参数设置
+
