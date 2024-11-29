@@ -1,0 +1,182 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="第 1 页" id="A5St3tr7aBGmyLHcva23">
+    <mxGraphModel dx="1109" dy="707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-1" target="aGDRugcGBpxrPTAeCLiX-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-1" value="new User()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="140" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-2" target="aGDRugcGBpxrPTAeCLiX-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-9" value="能" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-5">
+          <mxGeometry x="-0.1393" y="-1" relative="1" as="geometry">
+            <mxPoint x="7" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-2" target="aGDRugcGBpxrPTAeCLiX-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-10" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-8">
+          <mxGeometry x="-0.1297" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-2" value="能否栈内分配？" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="110" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-4" target="aGDRugcGBpxrPTAeCLiX-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-51" value="方法出栈释放" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-50">
+          <mxGeometry x="-0.4122" y="1" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-4" value="线程栈的栈帧空间" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-6" value="释放空间" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="890" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-7" target="aGDRugcGBpxrPTAeCLiX-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-13" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-12">
+          <mxGeometry x="-0.04" relative="1" as="geometry">
+            <mxPoint x="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-7" target="aGDRugcGBpxrPTAeCLiX-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-16" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-15">
+          <mxGeometry x="-0.08" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-7" value="是否是大对象？" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-11" target="aGDRugcGBpxrPTAeCLiX-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-11" value="老年代空间" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-14" target="aGDRugcGBpxrPTAeCLiX-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-19" value="是，表示能够预先分配堆内存" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-18">
+          <mxGeometry x="-0.0588" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-14" target="aGDRugcGBpxrPTAeCLiX-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="540" />
+              <mxPoint x="490" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-21" value="否，表示不能够预先分配堆空间&lt;div&gt;使用CAS+失败重试进行分配&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-20">
+          <mxGeometry x="-0.0238" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-14" value="是否本地线程&lt;div&gt;分配缓冲，TLAB&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="400" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-17" target="aGDRugcGBpxrPTAeCLiX-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-17" value="Eden区空间" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-24" target="aGDRugcGBpxrPTAeCLiX-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="540" />
+              <mxPoint x="950" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-27" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-26">
+          <mxGeometry x="-0.0118" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-24" target="aGDRugcGBpxrPTAeCLiX-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-30" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-29">
+          <mxGeometry x="-0.04" y="-2" relative="1" as="geometry">
+            <mxPoint x="-4" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-24" value="是否通过&lt;div&gt;Minor GC回收&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="400" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-28" target="aGDRugcGBpxrPTAeCLiX-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-28" value="S0区空间" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="410" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-32" target="aGDRugcGBpxrPTAeCLiX-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="805" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-35" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-34">
+          <mxGeometry x="-0.0769" relative="1" as="geometry">
+            <mxPoint x="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-32" target="aGDRugcGBpxrPTAeCLiX-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-42" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-41">
+          <mxGeometry x="-0.3271" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-32" value="是否触发对象&lt;span style=&quot;background-color: initial;&quot;&gt;动&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;态年龄判断机制&lt;/span&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="745" y="310" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-40" target="aGDRugcGBpxrPTAeCLiX-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-40" value="S0区空间" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="625" y="320" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-44" target="aGDRugcGBpxrPTAeCLiX-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-47" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-46">
+          <mxGeometry x="-0.0118" y="-1" relative="1" as="geometry">
+            <mxPoint x="-2" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="aGDRugcGBpxrPTAeCLiX-44" target="aGDRugcGBpxrPTAeCLiX-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-49" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="aGDRugcGBpxrPTAeCLiX-48">
+          <mxGeometry x="-0.7091" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aGDRugcGBpxrPTAeCLiX-44" value="是否通过&lt;div&gt;Full GC回收&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="745" y="180" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

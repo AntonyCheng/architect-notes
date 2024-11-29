@@ -4,6 +4,8 @@ import org.openjdk.jol.info.ClassLayout;
 
 /**
  * 使用jol-core计算对象大小
+ * 开启指针压缩：java -XX:+UseCompressedOops
+ * 禁止指针压缩：java -XX:-UseCompressedOops
  *
  * @author AntonyCheng
  */
