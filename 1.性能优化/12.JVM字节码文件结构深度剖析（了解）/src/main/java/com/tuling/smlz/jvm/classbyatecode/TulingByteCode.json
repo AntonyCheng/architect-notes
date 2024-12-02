@@ -1,0 +1,307 @@
+{
+  "magic_num":"u4(CA FE BA BE)->desc:魔数" ,
+  "minor_version":"u2(00 00)->desc:jdk的次版本号",
+  "major_version":"u2(00 34->desc:52对应jdk主版本号1.8)",
+  "constant_pool_count":"u2(00 19->desc:25-1=24个常量第0个被jvm占用表示null)",
+  "constant_pool":{
+    "CONSTANT_Methodref_info(第一个常量)":{
+      "tag":"u1(0A)->desc:表示方法引用类型常量结构",
+      "class_index":"u2(00 04)->desc:表示指向常量池中第四个常量，所属class",
+      "name_and_type_index":"u2(00 15)->desc:指向常量池第21的位置,表示方法的描述符"
+    },
+    "CONSTANT_Fieldref_info(第二个常量)": {
+      "tag":"u1(09)->desc:表示字段引用类型常量结构",
+      "class_index":"u2(00 03)->desc:表示指向常量池中第3个常量，所属class",
+      "name_and_type_index":"u2(00 16)->desc:指向常量池第22的位置,表示字段的描述符"
+    },
+    "CONSTANT_Class_info(第三个常量)": {
+      "tag":"u1(07)->desc:表示class类型常量结构",
+      "name_index":"u2(00 17)->desc:表示指向常量池中第23个常量，class的名称"
+    },
+    "CONSTANT_Class_info(第四个常量)": {
+      "tag":"u1(07)->desc:表示class类型常量结构",
+      "name_index":"u2(00 18)->desc:表示指向常量池中第24个常量，class的名称"
+    },
+    "CONSTANT_Utf8_info(第五个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 08)->desc:紧接着后面8个字节表示的字面量",
+      "byte[8]":"(75 73 65 72 4E 61 6D 65)->desc:userName "
+    },
+    "CONSTANT_Utf8_info(第六个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 12)->desc:紧接着后面18个字节表示的字面量",
+      "byte[18]":"(4C 6A 61 76 61 2F 6C 61 6E 67 2F 53 74 72 69 6E  67 3B )->desc:Ljava/lang/String;"
+    },
+    "CONSTANT_Utf8_info(第七个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 06)->desc:紧接着后面6个字节表示的字面量",
+      "byte[6]":"(3C 69 6E 69 74 3E)->desc:<init>"
+    },
+    "CONSTANT_Utf8_info(第八个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 03)->desc:紧接着后面3个字节表示的字面量",
+      "byte[6]":"(28 29  56 )->desc:()V"
+    },
+    "CONSTANT_Utf8_info(第九个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 04)->desc:紧接着后面4个字节表示的字面量",
+      "byte[4]":"(43 6F 64 65)->desc:Code"
+    },
+    "CONSTANT_Utf8_info(第十个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 0F)->desc:紧接着后面15个字节表示的字面量",
+      "byte[15]":"(4C 69 6E 65 4E  75 6D 62 65 72 54 61 62 6C 65 )-	 >desc:LineNumberTable"
+    },
+    "CONSTANT_Utf8_info(第十一个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 12)->desc:紧接着后面18个字节表示的字面量",
+      "byte[18]":"(4C 6F 63  61 6C 56 61 72 69 61 62 6C 65 54 61 62 6C 65)->desc:LocalVariableTable"
+    },
+    "CONSTANT_Utf8_info(第十二个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 04)->desc:紧接着后面4个字节表示的字面量",
+      "byte[4]":"(74 68 69 73)->desc:this"
+    },
+    "CONSTANT_Utf8_info(第十三个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 33)->desc:紧接着后面51个字节表示的字面量",
+      "byte[51]":"(4C 63 6F 6D 2F 74 75  6C 69 6E 67 2F 73 6D 6C 7A 2F 6A 76 6D 2F 63 6C  61 73 73 62 79 61 74 65 63 6F 64 65 2F 54 75 6C  69 6E 67 42 79 74 65 43 6F 64 65 3B )->desc:Lcom/tuling/smlz/jvm/classbyatecode/TulingByteCode;"
+    },
+    "CONSTANT_Utf8_info(第十四个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 0B)->desc:紧接着后面11个字节表示的字面量",
+      "byte[11]":"(67  65 74 55 73 65 72 4E 61 6D 65 )->desc:getUserName"
+    },
+    "CONSTANT_Utf8_info(第十五个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 14)->desc:紧接着后面20个字节表示的字面量",
+      "byte[20]":"(28 29 4C  6A 61 76 61 2F 6C 61 6E 67 2F 53 74 72 69 6E 67 3B )->desc:()Ljava/lang/String;"
+    },
+    "CONSTANT_Utf8_info(第十六个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 0B)->desc:紧接着后面11个字节表示的字面量",
+      "byte[11]":"(73 65 74 55 73 65 72 4E 61 6D 65)->desc:setUserName"
+    },
+    "CONSTANT_Utf8_info(第十七个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 15)->desc:紧接着后面21个字节表示的字面量",
+      "byte[21]":"(28 4C 6A 61 76 61 2F 6C 61 6E 67 2F 53 74  72 69 6E 67 3B 29 56 )->desc:(Ljava/lang/String;)V"
+    },
+    "CONSTANT_Utf8_info(第十八个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 10)->desc:紧接着后面16个字节表示的字面量",
+      "byte[16]":"(28 4C 6A 61 76 61 2F 6C 61 6E 67 2F 53 74  72 69 6E 67 3B 29 56 )->desc:MethodParameters"
+    },
+    "CONSTANT_Utf8_info(第十九个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 0A)->desc:紧接着后面10个字节表示的字面量",
+      "byte[10]":"(53 6F 75  72 63 65 46 69 6C 65  )->desc:SourceFile"
+    },
+    "CONSTANT_Utf8_info(第二十个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 13)->desc:紧接着后面19个字节表示的字面量",
+      "byte[19]":"(54 75 6C 69 6E 67  42 79 74 65 43 6F 64 65 2E 6A 61 76 61)->desc:TulingByteCode.java"
+    },
+    "CONSTANT_NameAndType_info(第二十一个常量)": {
+      "tag":"u1(0C)->desc:表示NameAndType_类型常量结构",
+      "name_index":"u2(00 07)->desc:指向常量池第七个-><init>",
+      "descriptor_index":"u2(00 08)->指向常量池第八个->()V"
+    },
+    "CONSTANT_NameAndType_info(第二十二个常量)": {
+      "tag":"u1(0C)->desc:表示NameAndType_类型常量结构",
+      "name_index":"u2(00 05)->desc:指向常量池第五个->userName",
+      "descriptor_index":"u2(00 06)->指向常量池第八个->Ljava/lang/String;"
+    },
+    "CONSTANT_Utf8_info(第二十三个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 31)->desc:紧接着后面49个字节表示的字面量",
+      "byte[49]":"(63 6F 6D 2F 74 75  6C 69 6E 67 2F 73 6D 6C 7A 2F 6A 76 6D 2F 63 6C  61 73 73 62 79 61 74 65 63 6F 64 65 2F 54 75 6C  69 6E 67 42 79 74 65 43 6F 64 65 )->desc:com/tuling/smlz/jvm/classbyatecode/TulingByteCode"
+    },
+    "CONSTANT_Utf8_info(第二十四个常量)": {
+      "tag":"u1(01)->desc:表示utf-8类型常量结构",
+      "length":"u2(00 10)->desc:紧接着后面49个字节表示的字面量",
+      "byte[49]":"(6A 61  76 61 2F 6C 61 6E 67 2F 4F 62 6A 65 63 74 )->desc:java/lang/Object"
+    }
+
+  },
+  "access_flag" :"u2(00 21)->desc:由0x0020(ACC_SUPER)和0x0001(ACC_PUBLIC) 位运算",
+  "this_class_name":"u2(00 03)->desc:当前的class的名称 索引位置指向常量池#3,发现#3指向#23值，#23的值com/tuling/smlz/jvm/classbyatecode/TulingByteCode",
+  "super_class_name":"u2(00 04)->desc:父类的class的 索引位置指向的常量池#4,发现#4指向到#24,值位:java/lang/Object",
+  "interfaces_count":"u2(00 00)此时表示的接口的个数为0个,若接口的信息表为null",
+  "interface[interfaces_count=0]":{},
+  "fields_count":"u2(00 01)表示当前的class文件的字段的个数1个 ",
+  "Field_info":{
+    "Field_info[0]": {
+      "access_flag": "u2(00 02)desc:->0x0002 ACC_PRIVATE",
+      "name_index": "u2(00 05)->desc:->指向常量池#5 userName",
+      "descciptor_index": "u2(00 06)->desc指向常量的第六个#6 Ljava/lang/String;",
+      "attribute_count": "u2(00 00) 字段属性的个数为0那么没有字段属性",
+      "attribute_info": {}
+    }
+  },
+  "method_count":"u2(00 03)->desc:表示我们的方法的个数为三个",
+  "method_infos": {
+    "method_info[0]": {
+      "access_flag": "u2(00 01)->desc:表示我们的方法访问权限为ACC_PUBLIC",
+      "name_index": "u2(00 07)->desc:表示方法名称的索引指向常量池第七个位置#7 表示<init> 再编译时期生成的默认的构造函数",
+      "descciptor_index": "u2(00 08)->desc:表示方法描述索引指向常量池#8 表示:()V 无参数,无返回值",
+      "attribute_count": "u2(00 01)->desc:表示方法的属性个数",
+      "attribute_infos": {
+        "Code": {
+          "attribute_name_index": "u2(00 09)->desc:我们属性的名称指向常量值索引的#9 位置 值为Code",
+          "attribute_length": "u4(00 00 00 2F)-desc:表示我们的Code属性紧接着下来的47个字节是Code的内容",
+          "max_stack": "u2(00 01)->desc：表示该方法的最大操作数栈的深度1",
+          "max_locals": "u2(00 01)->desc:表示该方法的局部变量表的个数为1",
+          "Code_length": "u4(00 00 00 05)->desc:指令码的长度为5",
+          "Code[Code_length]": "2A B7 00 01 B1 其中0x002A->对应的字节码注记符是aload_0;0xB7->invokespecial;00 01表示表示是B7指令码操作的对象指向常量池中的#1(java/lang/Object.<init>:()V);B1表示调用方法返回void",
+          "exception_table_length": "u2(00 00)->表示该方法不抛出异常,故exception_info没有异常信息",
+          "exception_info": {},
+          "attribute_count": "u2(00 02)->desc表示code属性表的属性个数为2",
+          "attribute_info": {
+            "LineNumberTable": {
+              "attribute_name_index": "u2(00 0A)当前属性表名称的索引指向我们的常量池#10(LineNumberTable)",
+              "attribute_length": "u4(00 00 00 06)当前属性表属性的字段占用6个字节是用来描述line_number_info",
+              "mapping_count": "u2(00 01)->desc:该方法指向的指令码和源码映射的对数  表示一对",
+              "line_number_infos": {
+                "line_number_info[0]": {
+                  "start_pc": "u2(00 00)->desc:表示指令码的行数",
+                  "line_number": "u2(00 06)->desc:源码的行号"
+                }
+              }
+            },
+            "localVariableTable": {
+              "attribute_name_index": "u2(00 0B)当前属性表名称的索引指向我们的常量池#10(localVariableTable)",
+              "attribute_length": "u4(00  00 00 0C)当前属性表属性的字段占用12个字节用来描述local_variable_info",
+              "local_variable_length": "u2(00 01)->desc:表示局部变量的个数1个",
+              "local_variable_infos": {
+                "local_variable_info[0]": {
+                  "start_pc": "u2(00 00 )->desc:这个局部变量的生命周期开始的字节码偏移量",
+                  "length:": "u2(00 05)->作用范围覆盖的长度为5",
+                  "name_index": "u2(00 0c)->字段的名称索引指向常量池12的位置 this",
+                  "desc_index": "u2(00 0D)局部变量的描述符号索引->指向#13的位置Lcom/tuling/smlz/jvm/classbyatecode/TulingByteCode;",
+                  "index": "u2(00 00)->desc:index是这个局部变量在栈帧局部变量表中Slot的位置"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "method_info[1]": {
+      "access_flag": "u2(00 01)->desc:表示我们的方法访问权限为ACC_PUBLIC",
+      "name_index": "u2(00 0E)->desc:表示方法名称的索引指向常量池第14个位置#14 表示getUserName ",
+      "descciptor_index": "u2(00 0F)->desc:表示方法描述索引指向常量池#5 表示:()Ljava/lang/String;无参数,返回值是String",
+      "attribute_count": "u2(00 01)->desc:表示方法的属性个数",
+      "attribute_info": {
+        "Code": {
+          "attribute_name_index": "u2(00 09)->desc:我们属性的名称指向常量值索引的#9 位置 值为Code",
+          "attribute_length": "u4(00 00 00 2F)-desc:表示我们的Code属性紧接着下来的47个字节是Code的内容",
+          "max_stack": "u2(00 01)->desc：表示该方法的最大操作数栈的深度1",
+          "max_locals": "u2(00 01)->desc:表示该方法的局部变量表的个数为1",
+          "Code_length": "u4(00 00 00 05)->desc:指令码的长度为5",
+          "Code[Code_length]": "2A B4 00 02 B0  其中0x002A->对应的字节码注记符是aload_0;0xB4->getfield 获取指定类的实例域，并将其值压入栈顶;00 02表示表示是B4指令码操作的对象指向常量池中的#2(com/tuling/smlz/jvm/classbyatecode/TulingByteCode.userName:Ljava/lang/String;);B0表示为aretrun 返回  从当前方法返回对象引用",
+          "exception_table_length": "u2(00 00)->表示该方法不抛出异常,故exception_info没有异常信息",
+          "exception_info": {},
+          "attribute_count": "u2(00 02)->desc表示code属性表的属性个数为2",
+          "attribute_info": {
+            "LineNumberTable": {
+              "attribute_name_index": "u2(00 0A)当前属性表名称的索引指向我们的常量池#10(LineNumberTable)",
+              "attribute_length": "u4(00 00 00 06)当前属性表属性的字段占用6个字节是用来描述line_number_info",
+              "mapping_count": "u2(00 01)->desc:该方法指向的指令码和源码映射的对数  表示一对",
+              "line_number_infos": {
+                "line_number_info[0]": {
+                  "start_pc": "u2(00 00)->desc:表示指令码的行数",
+                  "line_number": "u2(00 0B)->desc:源码12行号"
+                }
+              },
+              "localVariableTable": {
+                "attribute_name_index": "u2(00 0B)当前属性表名称的索引指向我们的常量池#10(localVariableTable)",
+                "attribute_length": "u4(00  00 00 0C)当前属性表属性的字段占用12个字节用来描述local_variable_info",
+                "local_variable_length": "u2(00 01)->desc:表示局部变量的个数1",
+                "local_vabiable_infos": {
+                  "local_vabiable_info[0]": {
+                    "start_pc": "u2(00 00 )->desc:这个局部变量的生命周期开始的字节码偏移量",
+                    "length:": "u2(00 05)->作用范围覆盖的长度为5",
+                    "name_index": "u2(00 0c)->字段的名称索引指向常量池12的位置 this",
+                    "desc_index": "u2(00 0D)局部变量的描述符号索引->指向#13的位置Lcom/tuling/smlz/jvm/classbyatecode/TulingByteCode;",
+                    "index": "u2(00 00)->desc:index是这个局部变量在栈帧局部变量表中Slot的位置"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "method_info[2]": {
+      "access_flag": "u2(00 01)->desc:表示我们的方法访问权限为ACC_PUBLIC",
+      "name_index": "u2(00 10)->desc:表示方法名称的索引指向常量池第16个位置#16 表示setUserName ",
+      "descciptor_index": "u2(00 11)->desc:表示方法描述索引指向常量池#17 表示:(Ljava/lang/String;)V;String参数,返回void",
+      "attribute_count": "u2(00 02)->desc:表示方法的属性个数2",
+      "attribute_info": {
+        "Code": {
+          "attribute_name_index": "u2(00 09)->desc:我们属性的名称指向常量值索引的#9 位置 值为Code",
+          "attribute_length": "u4(00 00 00 3E)-desc:表示我们的Code属性紧接着下来的62个字节是Code的内容",
+          "max_stack": "u2(00 02)->desc：表示该方法的最大操作数栈的深度2",
+          "max_locals": "u2(00 02)->desc:表示该方法的局部变量表的个数为2",
+          "Code_length": "u4(00 00 00 06)->desc:指令码的长度为6",
+          "Code[Code_length]": "2A 2B B5 00 02 B1    其中0x002A->对应的字节码注记符是aload_0;0x2B->aload_1 将第二个引用类型本地变量推送至栈顶;B5:putfield 用栈顶的值为指定的类的实例域赋值,00 02表示的是B5指令操作的对象,指向常量池中#2位置com/tuling/smlz/jvm/classbyatecode/TulingByteCode.userName:Ljava/lang/String; B1指令表示返回void",
+          "exception_table_length": "u2(00 00)->表示该方法不抛出异常,故exception_info没有异常信息",
+          "exception_info": {},
+          "attribute_count": "u2(00 02)->desc表示code属性表的属性个数为2",
+          "attribute_info": {
+            "LineNumberTable": {
+              "attribute_name_index": "u2(00 0A)当前属性表名称的索引指向我们的常量池#10(LineNumberTable)",
+              "attribute_length": "u4(00 00 00 0A)当前属性表属性的字段占用10个字节是用来描述line_number_info",
+              "mapping_count": "u2(00 02)->desc:该方法指向的指令码和源码映射的对数  表示二对",
+              "line_number_infos": {
+                "line_number_info[0]": {
+                  "start_pc": "u2(00 00)->desc:表示指令码的行数",
+                  "line_number": "u2(00 15)->desc:源码21行号"
+                },
+                "line_number_info[1]": {
+                  "start_pc": "u2(00 05)->desc:表示指令码的5行",
+                  "line_number": "u2(00 16)->desc:源码22行号"
+                }
+              }
+            },
+            "localVariableTable": {
+              "attribute_name_index": "u2(00 0B)当前属性表名称的索引指向我们的常量池#10(localVariableTable)",
+              "attribute_length": "u4(00 00 00 16)当前属性表属性的字段占用22个字节用来描述local_variable_info",
+              "local_variable_length": "u2(00 02)->desc:表示局部变量的个数2",
+              "local_variable_infos": {
+                "local_variable_info[0]": {
+                  "start_pc": "u2(00 00 )->desc:这个局部变量的生命周期开始的字节码偏移量",
+                  "length:": "u2(00 06)->作用范围覆盖的长度为6",
+                  "name_index": "u2(00 0c)->字段的名称索引指向常量池12的位置 this",
+                  "desc_index": "u2(00 0D)局部变量的描述符号索引->指向#13的位置Lcom/tuling/smlz/jvm/classbyatecode/TulingByteCode;",
+                  "index": "u2(00 00)->desc:index是这个局部变量在栈帧局部变量表中Slot的位置"
+                },
+                "local_variable_info[1]": {
+                  "start_pc": "u2(00 00 )->desc:这个局部变量的生命周期开始的字节码偏移量",
+                  "length:": "u2(00 06)->作用范围覆盖的长度为6",
+                  "name_index": "u2(00 05)->字段的名称索引指向常量池5的位置 userName",
+                  "desc_index": "u2(00 06)局部变量的描述符号索引->指向#6的位置 Ljava/lang/String;",
+                  "index": "u2(00 01)->desc:index是这个局部变量在栈帧局部变量表中Slot的1位置"
+                }
+              }
+            }
+          }
+        },
+        "MethodParameters": {
+          "attribute_name_index": "u2(00 12)表示该属性的名称指向常量池#18的位置:MethodParameters",
+          "attribute_length": "u4(00 00 00 05 )->desc:属性的长度5",
+          "parameter_count": "u1(01)->desc参数的个数1个",
+          "parameter_name_index": "u2(00 05)->desc:指向第五个常量池的常量userName",
+          "ACC_FLAG": "U2(00 00 )->desc:表示任何权限都可以访问"
+        }
+      }
+    }
+  },
+  "attribute_count(class文件的属性)": "u2(00 01)只有一个属性",
+  "attribute_info(class文件属性的结构)": {
+      "attribute_name_index": "u2(00 13) 指向常量池中#19 值为 SourceFile",
+      "attribute_length": "u4(00 00 00 02) 表示属性接下来的长度为2",
+      "sourceFile_index": "u2(00 14) 表示源文件的索引指向常量池20的位置:TulingByteCode.java"
+  }
+}
