@@ -223,10 +223,7 @@ java -Xms3072M -Xmx3072M -Xmn2048M -Xss1M -XX:MetaspaceSize=512M -XX:MaxMetaspac
 
 即将新生代的内存提高至2048MB，从而打破新老年代1：2的比例局面以撑大Survivor区内存，此时各个区域具体内存如下：
 
-- 老年代：1GB
-- Eden区：1.6GB
-- S0区：0.2GB
-- S1区：0.2GB
+![针对特定JVM参数命令的堆内存模型](./assets/针对特定JVM参数命令的堆内存模型-1733360978194-1.jpg)
 
 这样就可以保证上述情况在Minor GC后不触发对象动态年龄判断机制（`60MB<0.2GB*50%`），在这个业务场景下已经足够了，也就让其几乎不发生Full GC。
 
