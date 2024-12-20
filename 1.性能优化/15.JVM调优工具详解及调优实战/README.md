@@ -74,3 +74,133 @@ public class OomSample {
 最终如愿抛出OOM异常，此时在D盘就会形成一个jvm.dump文件：
 
 ![image-20241213202036492](./assets/image-20241213202036492.png)
+
+直接将其拖入visualvm虚拟机分析工具中可以看到如下信息：
+
+![image-20241220184954164](./assets/image-20241220184954164.png)
+
+如果是针对正在运行的Java程序，使用`jmap`命令可以在运行中途导出类似的堆内存文件，但是不建议对中大型长期运行的程序使用，因为内存占比很大，可能会导不出来，具体命令如下：
+
+![image-20241220190007270](./assets/image-20241220190007270.png)
+
+将init_template.hprof文件拖入visualvm虚拟机分析工具中可以看到如下信息：
+
+![image-20241220190443516](./assets/image-20241220190443516.png)
+
+### jstack
+
+**查找死锁进程**：
+
+这个命令加上进程PID可以查找到死锁情况，下面有一段可以触发死锁的代码：
+
+```java
+package top.sharehome.jvmcommands;
+
+/**
+ * 进程死锁示例代码
+ *
+ * @author AntonyCheng
+ */
+public class DeadLockSample {
+
+    private static Object lock1 = new Object();
+
+    private static Object lock2 = new Object();
+
+    public static void main(String[] args) {
+        System.out.println("主线程开始");
+        new Thread(() -> {
+            synchronized (lock1) {
+                try {
+                    System.out.println("thread1开始");
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                }
+                synchronized (lock2) {
+                    System.out.println("thread1结束");
+                }
+            }
+        }).start();
+        new Thread(() -> {
+            synchronized (lock2) {
+                try {
+                    System.out.println("thread2开始");
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                }
+                synchronized (lock1) {
+                    System.out.println("thread2结束");
+                }
+            }
+        }).start();
+        System.out.println("主线程结束");
+    }
+
+}
+```
+
+使用如下命令可以得到堆栈线程的部分信息：
+
+![image-20241220191800718](./assets/image-20241220191800718.png)
+
+```
+"Thread-1" #13 prio=5 os_prio=0 tid=0x0000029763c5c800 nid=0x2178 waiting for monitor entry [0x000000d6e3fff000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+        at top.sharehome.jvmcommands.DeadLockSample.lambda$main$1(DeadLockSample.java:36)
+        - waiting to lock <0x000000076e290ee0> (a java.lang.Object)
+        - locked <0x000000076e290ef0> (a java.lang.Object)
+        at top.sharehome.jvmcommands.DeadLockSample$$Lambda$2/1747585824.run(Unknown Source)
+        at java.lang.Thread.run(Thread.java:750)
+
+"Thread-0" #12 prio=5 os_prio=0 tid=0x0000029763bcf800 nid=0x26dc waiting for monitor entry [0x000000d6e3eff000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+        at top.sharehome.jvmcommands.DeadLockSample.lambda$main$0(DeadLockSample.java:24)
+        - waiting to lock <0x000000076e290ef0> (a java.lang.Object)
+        - locked <0x000000076e290ee0> (a java.lang.Object)
+        at top.sharehome.jvmcommands.DeadLockSample$$Lambda$1/1096979270.run(Unknown Source)
+        at java.lang.Thread.run(Thread.java:750)
+```
+
+**"Thread-1"** ==> 线程名；
+
+**prio=5** ==> 优先级为5；
+
+**tid=0x0000029763c5c800** ==> 线程ID；
+
+**nid=0x2d64** ==> 线程对应的本地线程标识NID；
+
+**java.lang.Thread.State: BLOCKED** ==> 线程状态为阻塞。
+
+```
+Found one Java-level deadlock:
+=============================
+"Thread-1":
+  waiting to lock monitor 0x00000297613ed328 (object 0x000000076e290ee0, a java.lang.Object),
+  which is held by "Thread-0"
+"Thread-0":
+  waiting to lock monitor 0x00000297613eaa98 (object 0x000000076e290ef0, a java.lang.Object),
+  which is held by "Thread-1"
+
+Java stack information for the threads listed above:
+===================================================
+"Thread-1":
+        at top.sharehome.jvmcommands.DeadLockSample.lambda$main$1(DeadLockSample.java:36)
+        - waiting to lock <0x000000076e290ee0> (a java.lang.Object)
+        - locked <0x000000076e290ef0> (a java.lang.Object)
+        at top.sharehome.jvmcommands.DeadLockSample$$Lambda$2/1747585824.run(Unknown Source)
+        at java.lang.Thread.run(Thread.java:750)
+"Thread-0":
+        at top.sharehome.jvmcommands.DeadLockSample.lambda$main$0(DeadLockSample.java:24)
+        - waiting to lock <0x000000076e290ef0> (a java.lang.Object)
+        - locked <0x000000076e290ee0> (a java.lang.Object)
+        at top.sharehome.jvmcommands.DeadLockSample$$Lambda$1/1096979270.run(Unknown Source)
+        at java.lang.Thread.run(Thread.java:750)
+
+Found 1 deadlock.
+```
+
+在信息最后部分可以明显看出找到了一个死锁。除了这种方式，使用visualvm虚拟机分析工具也能轻松查看死锁情况：
+
+![image-20241220192143739](./assets/image-20241220192143739.png)
+
+### jinfo
