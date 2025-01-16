@@ -307,8 +307,8 @@ Java 8中默认使用Parallel垃圾回收器和Parallel Old垃圾回收器，Jav
 
 **安全区域是什么呢？**
 
-Safe Point 是对正在执行的线程设定的。
+Safe Point是对正在执行的线程设定的。
 
-如果一个线程处于 Sleep 或中断状态，它就不能响应 JVM 的中断请求，再运行到 Safe Point 上。因此 JVM 引入了 Safe Region。
+如果一个线程处于Sleep或中断状态，它就不能响应 JVM 的中断请求，再运行到 Safe Point上。因此JVM引入了Safe Region。
 
-Safe Region 是指在一段代码片段中，引用关系不会发生变化。在这个区域内的任意地方开始 GC 都是安全的。
+Safe Region是指在一段代码片段中，引用关系不会发生变化。在这个区域内的任意地方开始GC都是安全的。
